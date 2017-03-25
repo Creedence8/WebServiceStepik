@@ -1,9 +1,9 @@
-package main;
+package l1.main;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import servlets.AllRequestsServlet;
+import l1.servlets.AllRequestsServlet;
 
 /**
  * Created by Cole S' Offe on 02.02.2017.
