@@ -1,7 +1,7 @@
-package l2.servlets;
+package l3.servlets;
 
-import l2.accounts.AccountService;
-import l2.accounts.UserProfile;
+import l3.dataSet.UsersDataSet;
+import l3.dbService.DBService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,9 +13,9 @@ import java.io.IOException;
  * Created by Cole S' Offe on 24.03.2017.
  */
 public class SignUpServlet extends HttpServlet {
-    private final AccountService accountService;
+    private final DBService dbService;
 
-    public SignUpServlet(AccountService accountService) {this.accountService=accountService;}
+    public SignUpServlet(DBService accountService) {this.dbService=accountService;}
 
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response) throws ServletException, IOException {
@@ -34,9 +34,13 @@ public class SignUpServlet extends HttpServlet {
 //            response.setContentType("text/html;charset=utf-8");
 //            response.setStatus(HttpServletResponse.SC_OK);
 //        }
-        accountService.addNewUser(new UserProfile(login));
+        try {
+            dbService.addUser(login, pass);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-            response.setContentType("text/html;charset=utf-8");
+        response.setContentType("text/html;charset=utf-8");
             response.setStatus(HttpServletResponse.SC_OK);
     }
 }
