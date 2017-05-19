@@ -35,12 +35,12 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <outputDirectory>${basedir}</outputDirectory>
+                    <outputDirectory>${basedir}/../testingStepik/</outputDirectory>
                     <finalName>server</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>l6.main.Main</mainClass>
+                            <mainClass>l7.main.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
